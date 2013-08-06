@@ -78,11 +78,13 @@
     </fieldset>
 
     <fieldset>
-      {{ required_field(user_form.username) }}
+    <!--  <label>{{ user_form.username.label }}<span> *</span></label> -->
+      {{ bootstrap(required_field(user_form.username)) }}
     </fieldset>
 
     <fieldset>
       {{ privacy_field(profile_form.privacy_full_name, profile.privacy_full_name) }}
+     <!-- <label>{{ profile_form.full_name.label }}<span> *</span></label>-->
       {{ required_field(profile_form.full_name) }}
     </fieldset>
 
@@ -100,38 +102,38 @@
 
     <fieldset>
       {{ privacy_field(profile_form.privacy_region, profile.privacy_region) }}
-      {{ bootstrap(profile_form.region) }}
+      {{ bootstrap(field_with_attrs(profile_form.region)) }}
     </fieldset>
 
     <fieldset>
       {{ privacy_field(profile_form.privacy_city, profile.privacy_city) }}
-      {{ bootstrap(profile_form.city) }}
+      {{ bootstrap(field_with_attrs(profile_form.city)) }}
     </fieldset>
 
     <fieldset>
       {{ privacy_field(profile_form.privacy_timezone, profile.privacy_timezone) }}
-      {{ bootstrap(profile_form.timezone) }}
+      {{ bootstrap(field_with_attrs(profile_form.timezone)) }}
     </fieldset>
 
     <fieldset>
       {{ privacy_field(profile_form.privacy_bio, profile.privacy_bio) }}
-      {{ bootstrap(profile_form.bio) }}
+      {{ bootstrap(field_with_attrs(profile_form.bio)) }}
     </fieldset>
 
     <fieldset id="websites">
       {{ privacy_field(profile_form.privacy_website, profile.privacy_website) }}
-      {{ bootstrap(profile_form.website) }}
+      {{ bootstrap(field_with_attrs(profile_form.website)) }}
     </fieldset>
 
     <fieldset>
       {{ privacy_field(profile_form.privacy_ircname, profile.privacy_ircname) }}
-      {{ bootstrap(profile_form.ircname) }}
+      {{ bootstrap(field_with_attrs(profile_form.ircname)) }}
     </fieldset>
 
     <fieldset>
       {{ privacy_field(profile_form.privacy_date_mozillian, profile.privacy_date_mozillian) }}
-      {{ bootstrap(
-           field_with_attrs(
+      {{ 
+           bootstrap(field_with_attrs(
              profile_form.date_mozillian,
              **{'label': _('When did you get involved with Mozilla?')})) }}
     </fieldset>

@@ -1,6 +1,6 @@
 {% if field %}
   <label class="checkbox">
-    <span>{{ field.label }}</span> {{ field }}
+    {{ field.label }} {{ field }}
   </label>
 {% else %}
   {{ field.label_tag }}
@@ -16,6 +16,12 @@
         {{ field.help_text }}
        </p>
     {% endif %}
+  {% else %}
+    {{ field }}
+
+    {% for error in field.errors %}
+      <span class="error-message">{{ error }}</span>
+    {% endfor %}
 
     {% if field.help_text %}
       <p class="help-block">

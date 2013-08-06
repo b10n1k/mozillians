@@ -72,7 +72,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (base.TEMPLATE_CONTEXT_PROCESSORS + (
 ))
 
 JINGO_EXCLUDE_APPS = [
-    'bootstrapform',
+    #'bootstrapform',
     'admin',
     'autocomplete_light',
     'browserid'
@@ -224,7 +224,7 @@ INSTALLED_APPS = list(base.INSTALLED_APPS) + [
     'django.contrib.auth',
     'django.contrib.staticfiles',
     'django_browserid',
-    'bootstrapform',
+    #'bootstrapform',
 
     # DB migrations
     'south',
